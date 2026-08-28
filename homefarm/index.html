@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>HomeFarm — Premium Dragon Fruit Plants & Seasonal Fruit</title>
+    <meta name="description"
+        content="HomeFarm grows 13 named dragon fruit varieties in Kerala. Order rooted plants and fresh live cuttings year-round, plus seasonal fresh dragon fruit, direct from the farm via WhatsApp.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- CONFIGURATION REQUIRED: Replace homefarm.example with production domain before deployment -->
+    <link rel="canonical" href="https://homefarm.example/">
+    <meta name="theme-color" content="#0b1a0e">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="HomeFarm">
+    <meta property="og:title" content="HomeFarm — Premium Dragon Fruit Plants & Seasonal Fruit">
+    <meta property="og:description"
+        content="Pure. Local. Natural. Rooted dragon fruit plants, live cuttings and seasonal fruit across 13 named varieties, grown in Kerala.">
+    <meta property="og:image" content="https://homefarm.example/assets/images/hero%20section/001.webp">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:url" content="https://homefarm.example/">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HomeFarm — Premium Dragon Fruit Plants & Seasonal Fruit">
+    <meta name="twitter:description"
+        content="Pure. Local. Natural. Rooted dragon fruit plants, live cuttings and seasonal fruit across 13 named varieties, grown in Kerala.">
+    <meta name="twitter:image" content="https://homefarm.example/assets/images/hero%20section/001.webp">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&family=Manjari:wght@400;700&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              forest: '#0b1a0e',
+              'forest-dark': '#071008',
+              cream: '#ffffff',
+              'cream-dim': '#f0f0f0',
+              pink: '#ff2a70',
+              accent: '#e6c875',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Outfit', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Preload Hero Frame (LCP critical) -->
+    <link rel="preload" href="assets/images/hero section/001.webp" as="image" type="image/webp" fetchpriority="high">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "HomeFarm",
+        "description": "Dragon fruit plant nursery in Kerala growing 13 named varieties. Rooted plants, live cuttings and seasonal fresh fruit.",
+        "image": "https://homefarm.example/assets/icons/logo.png",
+        "telephone": "+917012301716",
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "Kerala",
+            "addressCountry": "IN"
+        }
+    }
+    </script>
+</head>
+
+<body class="bg-forest text-cream font-sans overflow-x-hidden antialiased">
+    <!-- Skip link -->
+    <a href="#main" class="skip-link sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded-full focus:font-display focus:text-xs focus:font-bold focus:uppercase">Skip to content</a>
+
+    <!-- Loader -->
+    <div id="loader" class="fixed inset-0 bg-forest z-[9999] flex justify-center items-center transition-all duration-700">
+        <div class="text-center">
+            <h2 class="font-display text-3xl tracking-[0.2em] mb-2">HOMEFARM</h2>
+            <p class="text-xs tracking-[0.3em] opacity-50 mb-8">PREPARING THE HARVEST</p>
+            <div class="w-48 h-0.5 bg-white/10 mx-auto overflow-hidden">
+                <div id="loader-bar" class="w-0 h-full bg-cream transition-all duration-100"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================================
+         NAVIGATION
+    ================================================================ -->
+    <header id="main-header" class="fixed top-0 left-0 w-full py-6 grid grid-cols-2 md:grid-cols-3 items-center px-6 md:px-12 lg:px-16 z-50 transition-all duration-400">
+        <div class="flex justify-start">
+            <a href="#hero" class="flex items-center gap-2 opacity-90 hover:opacity-100 transition-opacity" aria-label="HomeFarm Home">
+                <img src="assets/icons/logo.png" alt="HomeFarm Logo" aria-hidden="true" class="h-6 w-auto brightness-0 invert">
+                <span class="font-display text-[10px] font-bold tracking-[0.2em] uppercase text-white">HOMEFARM</span>
+            </a>
+        </div>
+        
+        <nav class="hidden md:flex justify-center gap-10" aria-label="Primary">
+            <a href="#hero" class="font-sans text-xs font-medium tracking-[0.15em] opacity-80 hover:opacity-100 transition-opacity uppercase text-white lang-text" data-en="HOME" data-ml="ഹോം">HOME</a>
+            <a href="#varieties" class="font-sans text-xs font-medium tracking-[0.15em] opacity-80 hover:opacity-100 transition-opacity uppercase text-white lang-text" data-en="OUR PRODUCE" data-ml="ഞങ്ങളുടെ ഉൽപ്പന്നങ്ങൾ">OUR PRODUCE</a>
+            <a href="#contact" class="font-sans text-xs font-medium tracking-[0.15em] opacity-80 hover:opacity-100 transition-opacity uppercase text-white lang-text" data-en="ORDER NOW" data-ml="ഓർഡർ ചെയ്യുക">ORDER NOW</a>
+        </nav>
+
+        <div class="flex justify-end items-center">
+            <div class="flex items-center gap-1 font-sans text-[11px] font-medium tracking-[0.15em] uppercase text-white">
+                <button class="lang-btn active opacity-100 hover:opacity-100 transition-opacity p-2 -m-2" data-lang="en" aria-pressed="true">EN</button>
+                <span class="opacity-40 px-1" aria-hidden="true">|</span>
+                <button class="lang-btn opacity-50 hover:opacity-100 transition-opacity p-2 -m-2" data-lang="ml" aria-pressed="false">ML</button>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden ml-4 p-3 -m-3" aria-label="Open menu" aria-expanded="false">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-forest/95 backdrop-blur-md z-[40] flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-500">
+        <nav class="flex flex-col items-center gap-10" aria-label="Mobile">
+            <a href="#hero" class="mobile-nav-link font-display text-2xl font-bold tracking-[0.2em] lang-text" data-en="HOME" data-ml="ഹോം">HOME</a>
+            <a href="#varieties" class="mobile-nav-link font-display text-2xl font-bold tracking-[0.2em] lang-text" data-en="OUR PRODUCE" data-ml="ഞങ്ങളുടെ ഉൽപ്പന്നങ്ങൾ">OUR PRODUCE</a>
+            <a href="#contact" class="mobile-nav-link font-display text-2xl font-bold tracking-[0.2em] lang-text" data-en="ORDER NOW" data-ml="ഓർഡർ ചെയ്യുക">ORDER NOW</a>
+            <a href="tel:+917012301716" class="mt-4 text-base tracking-widest opacity-60">+91 7012301716</a>
+        </nav>
+    </div>
+
+    <main id="main">
+        
+        <!-- ================================================================
+             SECTION 01 — CINEMATIC HERO
+             89-frame scroll-driven animation with 5-phase text reveals.
+             ScrollTrigger pins this section and creates scroll room.
+        ================================================================ -->
+        <section id="hero" class="hero-scroll relative w-full bg-forest">
+            <div class="hero-sticky relative w-full h-screen overflow-hidden">
+                <!-- Canvas for 89 frame sequence -->
+                <canvas id="hero-canvas" class="absolute inset-0 w-full h-full brightness-[1.15] contrast-[1.05]"></canvas>
+
+                <!-- ── TEXT OVERLAY ZONE ── -->
+                <div id="hero-text-block" class="absolute top-[12vh] md:top-[14vh] left-0 md:left-[5vw] w-full flex flex-col px-6 md:px-16 pointer-events-none z-10">
+                    <div class="w-full md:max-w-[50vw]">
+                        <!-- Main Typography: PURE. LOCAL. NATURAL. -->
+                        <h1 class="flex flex-col leading-[0.85] tracking-tighter text-white font-sans font-extralight uppercase">
+                            <span class="hero-word text-[clamp(2.5rem,13vw,260px)]" id="hero-word-1">PURE<span class="font-light text-pink">.</span></span>
+                            <span class="hero-word text-[clamp(2.5rem,13vw,260px)]" id="hero-word-2">LOCAL<span class="font-light text-pink">.</span></span>
+                            <span class="hero-word text-[clamp(2.5rem,13vw,260px)]" id="hero-word-3">NATURAL<span class="font-light text-pink">.</span></span>
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- ── MARKETING TEXT ZONE (appears after scroll) ── -->
+                <div id="hero-marketing-text" class="absolute top-[18vh] md:top-[22vh] left-6 md:left-[5vw] flex flex-col pointer-events-none z-10 max-w-[85vw] md:max-w-[480px] opacity-0 translate-y-8 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl">
+                    <h2 class="text-white font-display text-xl md:text-2xl font-bold uppercase tracking-[0.2em] mb-4 lang-text text-shadow-lg" data-en="ADVANCED CULTIVATION & RESEARCH" data-ml="നൂതന കൃഷിയും ഗവേഷണവും">ADVANCED CULTIVATION & RESEARCH</h2>
+                    <p class="text-white/80 font-sans text-sm md:text-[15px] leading-[1.8] lang-text" data-en="Combining traditional agriculture with modern botanical research. We cultivate disease-resistant rooted plants and high-Brix, naturally sweet seasonal fruits through sustainable, precision farming." data-ml="നൂതന ഗവേഷണത്തിലൂടെ മികച്ചയിനം ഡ്രാഗൺ ഫ്രൂട്ട്. പ്രതിരോധശേഷിയുള്ള ചെടികളും സ്വാഭാവിക മധുരമുള്ള പഴങ്ങളും സുസ്ഥിര കൃഷിരീതിയിലൂടെ ലഭ്യമാക്കുന്നു.">Combining traditional agriculture with modern botanical research. We cultivate disease-resistant rooted plants and high-Brix, naturally sweet seasonal fruits through sustainable, precision farming.</p>
+                </div>
+
+
+
+                <!-- ── PREMIUM PRODUCT TAGS ── -->
+                <div class="absolute bottom-16 md:bottom-20 right-6 md:right-16 flex flex-col items-end gap-3 z-20 pointer-events-none">
+                    <div class="hero-product-tag opacity-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-5 py-2.5 flex items-center gap-3 shadow-2xl" id="hero-tag-1">
+                        <span class="text-[10px] md:text-xs font-display font-bold tracking-[0.2em] uppercase text-white lang-text" data-en="LIVE CUTTING" data-ml="ലൈവ് കട്ടിംഗ്">LIVE CUTTING</span>
+                        <div class="w-1.5 h-1.5 rounded-full bg-pink"></div>
+                    </div>
+                    <div class="hero-product-tag opacity-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-5 py-2.5 flex items-center gap-3 shadow-2xl" id="hero-tag-2">
+                        <span class="text-[10px] md:text-xs font-display font-bold tracking-[0.2em] uppercase text-white lang-text" data-en="ROOTED PLANTS" data-ml="വേരുള്ള ചെടികൾ">ROOTED PLANTS</span>
+                        <div class="w-1.5 h-1.5 rounded-full bg-pink"></div>
+                    </div>
+                    <div class="hero-product-tag opacity-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-5 py-2.5 flex items-center gap-3 shadow-2xl" id="hero-tag-3">
+                        <span class="text-[10px] md:text-xs font-display font-bold tracking-[0.2em] uppercase text-white lang-text" data-en="FRUIT IN SEASON" data-ml="സീസണൽ പഴങ്ങൾ">FRUIT IN SEASON</span>
+                        <div class="w-1.5 h-1.5 rounded-full bg-pink"></div>
+                    </div>
+                </div>
+
+                <!-- ── SCROLL INDICATOR ── -->
+                <div class="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center z-20 transition-opacity duration-500" id="hero-scroll-indicator">
+                    <span class="font-sans text-[8px] tracking-[0.3em] font-medium opacity-60 mb-3 uppercase lang-text" data-en="SCROLL TO EXPLORE" data-ml="സ്ക്രോൾ ചെയ്യുക">SCROLL TO EXPLORE</span>
+                    <div class="w-px h-10 bg-white/20 overflow-hidden relative">
+                        <div class="w-full h-full bg-white animate-scroll-line absolute inset-0"></div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section id="varieties" class="varieties-section relative bg-forest-dark px-6 md:px-12 lg:px-16 z-30 overflow-hidden">
+            <!-- Background Watermark -->
+            <div class="absolute top-8 md:top-16 left-0 w-full flex justify-center pointer-events-none z-0 overflow-hidden">
+                <h2 class="watermark-text font-display font-extrabold tracking-tight uppercase whitespace-nowrap text-white select-none lang-text" data-en="PREMIUM VARIETIES" data-ml="പ്രീമിയം ഇനങ്ങൾ" aria-hidden="true">PREMIUM VARIETIES</h2>
+            </div>
+
+            <div class="max-w-[1600px] mx-auto relative z-10">
+                
+                <!-- Section Header -->
+                <div class="carousel-section-header">
+                    <span class="font-display text-[10px] font-bold tracking-[0.3em] uppercase text-accent mb-1 block lang-text" data-en="OUR COLLECTION" data-ml="ഞങ്ങളുടെ ശേഖരം">OUR COLLECTION</span>
+                    <h2 class="font-display text-[clamp(1.75rem,2.6vw,2.75rem)] leading-none font-bold tracking-tight uppercase text-white/90 lang-text" data-en="13 Premium Varieties" data-ml="13 പ്രീമിയം ഇനങ്ങൾ">13 Premium Varieties</h2>
+                </div>
+
+                <!-- Primary Carousel Stage / Grid -->
+                <div class="carousel-content relative">
+                    <!-- Swipe Hint & Progress (Mobile Only) -->
+                    <div class="swipe-hint md:hidden flex justify-center items-center gap-2 py-3 opacity-100 transition-opacity duration-500">
+                        <span class="swipe-hint-text text-white/30 text-[10px] uppercase tracking-widest font-sans">Swipe to explore</span>
+                        <span class="swipe-hint-icon text-white/30 w-4 h-4">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </span>
+                    </div>
+                    <!-- New Grid Container -->
+                    <div id="varieties-grid" class="varieties-grid">
+                        <!-- Populated dynamically by JS -->
+                    </div>
+                    
+                    <div class="mobile-carousel-dots md:hidden" id="mobile-carousel-dots">
+                        <!-- Javascript will inject dots here -->
+                    </div>
+                </div>
+                
+                <div class="mt-2 text-[9px] opacity-25 text-center tracking-wider">
+                    Reported Brix ranges; actual sweetness varies with cultivar, maturity, growing conditions and harvest timing.
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- ================================================================
+             SECTION 03 — FIND YOUR VARIETY / COMPARISON
+        ================================================================ -->
+        <section id="comparison" class="bg-cream-dim text-black pt-24 md:pt-32 pb-24 md:pb-32 px-6 md:px-16 relative z-30">
+            <div class="max-w-[1600px] mx-auto">
+                <div class="mb-10 md:mb-12">
+                    <h2 class="font-display text-[clamp(2.2rem,5.5vw,4.5rem)] font-bold tracking-tight uppercase mb-4 lang-text" data-en="FIND YOUR VARIETY" data-ml="നിങ്ങളുടെ ഇനം കണ്ടെത്തുക">FIND YOUR VARIETY</h2>
+                    <p class="text-sm md:text-base opacity-70 max-w-lg lang-text" data-en="Compare sweetness, flesh, pollination and growing character at a glance." data-ml="മധുരം, ഉൾഭാഗം, പരാഗണം, വളർച്ച എന്നിവ ഒറ്റനോട്ടത്തിൽ താരതമ്യം ചെയ്യുക.">
+                        Compare sweetness, flesh, pollination<br>and growing character at a glance.
+                    </p>
+                </div>
+
+                <!-- Filters -->
+                <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-10">
+                    <div class="flex flex-wrap gap-2">
+                        <button class="filter-btn active px-5 py-2 border border-black/20 rounded-full font-display text-[11px] font-bold tracking-widest" data-filter="all">ALL</button>
+                        <button class="filter-btn px-5 py-2 border border-black/20 rounded-full font-display text-[11px] font-bold tracking-widest" data-filter="sweetest">SWEETEST</button>
+                        <button class="filter-btn px-5 py-2 border border-black/20 rounded-full font-display text-[11px] font-bold tracking-widest" data-filter="white-flesh">WHITE FLESH</button>
+                        <button class="filter-btn px-5 py-2 border border-black/20 rounded-full font-display text-[11px] font-bold tracking-widest" data-filter="red-flesh">RED/MAGENTA FLESH</button>
+                        <button class="filter-btn px-5 py-2 border border-black/20 rounded-full font-display text-[11px] font-bold tracking-widest" data-filter="self-fertile">SELF-FERTILE</button>
+                    </div>
+                    <div class="hidden md:flex text-[10px] uppercase tracking-[0.2em] opacity-40 font-bold pb-2 whitespace-nowrap lang-text" data-en="DRAG TO EXPLORE &rarr;" data-ml="വലിച്ചിഴച്ച് കാണുക &rarr;">
+                        DRAG TO EXPLORE &rarr;
+                    </div>
+                </div>
+
+                <!-- Cards Area -->
+                <div class="comparison-cards-area no-scrollbar flex overflow-x-auto gap-0 pb-10 snap-x snap-mandatory relative w-full pt-4 px-1" id="comparison-cards-area">
+                    <!-- Populated by JS -->
+                </div>
+                
+                <!-- Brix Callouts -->
+                <div id="dynamic-brix-callouts" class="flex flex-wrap gap-4 md:gap-6 mt-10">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================
+             SECTION 04 — CONTACT / ORDER
+        ================================================================ -->
+        <section id="contact" class="bg-forest min-h-screen flex flex-col justify-center items-center py-24 px-6 text-center relative">
+            <div class="flex-grow flex flex-col justify-center items-center max-w-[1000px] w-full">
+                <img src="assets/icons/logo.png" alt="HomeFarm Logo" class="h-20 md:h-28 w-auto brightness-0 invert mb-10 opacity-90">
+                <h2 class="font-display text-sm md:text-base font-bold tracking-[0.3em] uppercase mb-4 text-pink lang-text" data-en="CALL TO PLACE YOUR ORDER" data-ml="നിങ്ങളുടെ ഓർഡർ നൽകാൻ വിളിക്കുക">CALL TO PLACE YOUR ORDER</h2>
+                
+                <a href="tel:+917012301716" class="font-display text-[clamp(2.5rem,8vw,7rem)] font-bold uppercase leading-[0.9] mb-12 hover:text-pink transition-colors duration-300">
+                    +91 7012301716
+                </a>
+                
+                <div class="flex flex-col md:flex-row gap-4 w-full md:w-auto mb-16">
+                    <a href="https://wa.me/917012301716" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-12 py-5 rounded-full font-display text-sm font-bold tracking-[0.2em] uppercase bg-cream text-forest hover:bg-pink hover:text-cream transition-colors w-full md:w-auto">WHATSAPP US</a>
+                </div>
+                
+                <div class="text-sm leading-[1.8] opacity-50 tracking-wider">
+                    <p>hello@homefarm.example</p>
+                    <p>HomeFarm Farm<br>Kochi, Kerala<br>India</p>
+                </div>
+            </div>
+            
+            <footer class="w-full mt-auto pt-16 text-[11px] tracking-wider opacity-30 uppercase">
+                <p>&copy; <span id="year">2026</span> HomeFarm. Premium Dragon Fruit.</p>
+            </footer>
+        </section>
+        <!-- ================================================================
+             VARIETY MODAL
+        ================================================================ -->
+        <div id="variety-modal" class="premium-modal hidden" aria-hidden="true" role="dialog">
+            <div class="premium-modal-backdrop" id="variety-modal-close-bg"></div>
+            <div class="premium-modal-content">
+                <button class="premium-modal-close" id="variety-modal-close-btn" aria-label="Close modal">✕</button>
+                <div class="premium-modal-layout">
+                    <div class="premium-modal-image-col">
+                        <img id="modal-image" src="" alt="" class="premium-modal-image">
+                    </div>
+                    <div class="premium-modal-text-col">
+                        <span class="premium-modal-badge" id="modal-badge"></span>
+                        <h2 class="premium-modal-title" id="modal-title"></h2>
+                        <p class="premium-modal-subtitle" id="modal-subtitle"></p>
+                        
+                        <div class="premium-modal-divider"></div>
+                        
+                        <div class="premium-modal-facts" id="modal-facts">
+                            <!-- Populated by JS -->
+                        </div>
+                        
+                        <div class="premium-modal-notes" id="modal-notes">
+                            <!-- Populated by JS -->
+                        </div>
+                        
+                        <div class="premium-modal-actions mt-auto pt-6">
+                            <a href="#contact" class="premium-btn premium-btn-primary w-full" id="modal-order-btn" onclick="closeVarietyModal()">ORDER NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <!-- Application Logic -->
+    <script src="js/varieties.js"></script>
+    <script src="js/hero-canvas.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/comparison.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
