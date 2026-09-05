@@ -26,7 +26,7 @@ class HeroCanvasSequence {
         if (!this.canvas || !this.ctx || !this.heroSection) return;
 
         this.frameCount = 89;
-        this.images = new Array(this.frameCount);
+        this.images = new Map();
         this.loadedFrames = new Set();
         this.failedFrames = new Set();
         this.currentFrame = 0;
@@ -80,8 +80,8 @@ class HeroCanvasSequence {
             this.initScrollTrigger();
         }
         
-        // Progressive preloading strategy: load intelligently without spiking memory
-        this.progressivePreload();
+        // 3. Preload initial buffer around frame 1
+        this.manageBuffer(1);
     }
 
     hideLoader() {
@@ -132,7 +132,7 @@ class HeroCanvasSequence {
             img.onload = () => {
                 if (typeof img.decode === 'function') {
                     img.decode().then(() => {
-                        this.images[index - 1] = img;
+                        this.images.set(index, img);
                         this.loadedFrames.add(index);
                         resolve();
                     }).catch((e) => {
@@ -140,7 +140,7 @@ class HeroCanvasSequence {
                         reject(e);
                     });
                 } else {
-                    this.images[index - 1] = img;
+                    this.images.set(index, img);
                     this.loadedFrames.add(index);
                     resolve();
                 }
@@ -151,6 +151,10 @@ class HeroCanvasSequence {
             };
             img.src = this.getFramePath(index);
         });
+    }
+
+    async loadSingleFrame(index) {
+        return this.loadFrame(index);
     }
 
     async ensureFirstFrame() {
@@ -171,7 +175,7 @@ class HeroCanvasSequence {
         return new Promise((resolve) => {
             const fallbackImg = new Image();
             fallbackImg.onload = () => {
-                this.images[0] = fallbackImg;
+                this.images.set(1, fallbackImg);
                 this.loadedFrames.add(1);
                 resolve(1);
             };
@@ -180,53 +184,39 @@ class HeroCanvasSequence {
         });
     }
 
-    progressivePreload() {
-        const keyFrames = [1, 10, 20, 30, 40, 50, 60, 70, 80, 89];
+    manageBuffer(currentFrame) {
+        const bufferSize = 10; // Keep 10 frames ahead and behind
         
-        const loadBatch = async (frames) => {
-            for (const f of frames) {
-                if (!this.loadedFrames.has(f) && !this.failedFrames.has(f)) {
-                    try { await this.loadFrame(f); } catch (e) {}
-                }
+        // Load nearby frames
+        for (let i = Math.max(1, currentFrame - bufferSize); i <= Math.min(this.frameCount, currentFrame + bufferSize); i++) {
+            if (!this.images.has(i)) {
+                this.loadSingleFrame(i);
             }
-        };
-
-        // Load keyframes first
-        loadBatch(keyFrames).then(() => {
-            // Then idle load others
-            if ('requestIdleCallback' in window) {
-                let currentF = 1;
-                const idlePreload = (deadline) => {
-                    while (deadline.timeRemaining() > 0 && currentF <= this.frameCount) {
-                        if (!this.loadedFrames.has(currentF) && !this.failedFrames.has(currentF)) {
-                            this.loadFrame(currentF).catch(()=>{});
-                        }
-                        currentF++;
-                    }
-                    if (currentF <= this.frameCount) {
-                        requestIdleCallback(idlePreload);
-                    }
-                };
-                requestIdleCallback(idlePreload);
-            } else {
-                const midFrames = [5, 15, 25, 35, 45, 55, 65, 75, 85];
-                loadBatch(midFrames);
+        }
+        
+        // Unload far frames to prevent memory leaks on mobile
+        for (let [key, img] of this.images.entries()) {
+            if (key < currentFrame - bufferSize * 2 || key > currentFrame + bufferSize * 2) {
+                img.src = ""; // Force GC
+                this.images.delete(key);
+                this.loadedFrames.delete(key);
             }
-        });
+        }
     }
 
     renderFrame(index) {
         if (index === this.lastRenderedFrame) return; // Skip duplicate renders
         
-        const img = this.images[index - 1];
+        this.manageBuffer(index);
+        const img = this.images.get(index);
         if (!img) {
             // Frame not loaded yet — find nearest loaded frame
             let nearest = index;
             for (let d = 1; d <= this.frameCount; d++) {
-                if (this.images[index - 1 - d] && index - d >= 1) { nearest = index - d; break; }
-                if (this.images[index - 1 + d] && index + d <= this.frameCount) { nearest = index + d; break; }
+                if (this.images.has(index - d) && index - d >= 1) { nearest = index - d; break; }
+                if (this.images.has(index + d) && index + d <= this.frameCount) { nearest = index + d; break; }
             }
-            const fallback = this.images[nearest - 1];
+            const fallback = this.images.get(nearest);
             if (!fallback) return;
             this._drawImage(fallback);
             this.currentFrame = index;

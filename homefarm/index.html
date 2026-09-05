@@ -9,7 +9,7 @@
     <meta name="robots" content="index, follow">
     
     <!-- CONFIGURATION REQUIRED: Replace homefarm.example with production domain before deployment -->
-    <link rel="canonical" href="https://homefarm.example/">
+    <link rel="canonical" href="https://homefarm-production.com/">
     <meta name="theme-color" content="#0b1a0e">
 
     <!-- Open Graph -->
@@ -18,16 +18,16 @@
     <meta property="og:title" content="HomeFarm — Premium Dragon Fruit Plants & Seasonal Fruit">
     <meta property="og:description"
         content="Pure. Local. Natural. Rooted dragon fruit plants, live cuttings and seasonal fruit across 13 named varieties, grown in Kerala.">
-    <meta property="og:image" content="https://homefarm.example/assets/images/hero%20section/001.webp">
+    <meta property="og:image" content="https://homefarm-production.com/assets/images/hero%20section/001.webp">
     <meta property="og:locale" content="en_IN">
-    <meta property="og:url" content="https://homefarm.example/">
+    <meta property="og:url" content="https://homefarm-production.com/">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="HomeFarm — Premium Dragon Fruit Plants & Seasonal Fruit">
     <meta name="twitter:description"
         content="Pure. Local. Natural. Rooted dragon fruit plants, live cuttings and seasonal fruit across 13 named varieties, grown in Kerala.">
-    <meta name="twitter:image" content="https://homefarm.example/assets/images/hero%20section/001.webp">
+    <meta name="twitter:image" content="https://homefarm-production.com/assets/images/hero%20section/001.webp">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,7 +61,7 @@
     <link href="css/style.css" rel="stylesheet">
 
     <!-- Preload Hero Frame (LCP critical) -->
-    <link rel="preload" href="assets/images/hero section/001.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="assets/images/hero%20section/001.webp" as="image" type="image/webp" fetchpriority="high">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -70,7 +70,7 @@
         "@type": "LocalBusiness",
         "name": "HomeFarm",
         "description": "Dragon fruit plant nursery in Kerala growing 13 named varieties. Rooted plants, live cuttings and seasonal fresh fruit.",
-        "image": "https://homefarm.example/assets/icons/logo.png",
+        "image": "https://homefarm-production.com/assets/icons/logo.png",
         "telephone": "+917012301716",
         "address": {
             "@type": "PostalAddress",
@@ -154,15 +154,15 @@
                     <div class="w-full md:max-w-[50vw]">
                         <!-- Main Typography: PURE. LOCAL. NATURAL. -->
                         <h1 class="flex flex-col leading-[0.85] tracking-tighter text-white font-sans font-extralight uppercase">
-                            <span class="hero-word text-[clamp(2.5rem,13vw,260px)]" id="hero-word-1">PURE<span class="font-light text-pink">.</span></span>
-                            <span class="hero-word text-[clamp(2.5rem,13vw,260px)]" id="hero-word-2">LOCAL<span class="font-light text-pink">.</span></span>
-                            <span class="hero-word text-[clamp(2.5rem,13vw,260px)]" id="hero-word-3">NATURAL<span class="font-light text-pink">.</span></span>
+                            <span class="hero-word text-[clamp(2.5rem,min(10vw,15vh),200px)]" id="hero-word-1">PURE<span class="font-light text-pink">.</span></span>
+                            <span class="hero-word text-[clamp(2.5rem,min(10vw,15vh),200px)]" id="hero-word-2">LOCAL<span class="font-light text-pink">.</span></span>
+                            <span class="hero-word text-[clamp(2.5rem,min(10vw,15vh),200px)]" id="hero-word-3">NATURAL<span class="font-light text-pink">.</span></span>
                         </h1>
                     </div>
                 </div>
 
                 <!-- ── MARKETING TEXT ZONE (appears after scroll) ── -->
-                <div id="hero-marketing-text" class="absolute top-[18vh] md:top-[22vh] left-6 md:left-[5vw] flex flex-col pointer-events-none z-10 max-w-[85vw] md:max-w-[480px] opacity-0 translate-y-8 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl">
+                <div id="hero-marketing-text" class="absolute top-[18vh] md:top-[22vh] left-6 md:left-[5vw] flex flex-col pointer-events-none z-10 max-w-[85vw] md:max-w-[480px] opacity-0 translate-y-8 rounded-3xl p-6 md:p-8">
                     <h2 class="text-white font-display text-xl md:text-2xl font-bold uppercase tracking-[0.2em] mb-4 lang-text text-shadow-lg" data-en="ADVANCED CULTIVATION & RESEARCH" data-ml="നൂതന കൃഷിയും ഗവേഷണവും">ADVANCED CULTIVATION & RESEARCH</h2>
                     <p class="text-white/80 font-sans text-sm md:text-[15px] leading-[1.8] lang-text" data-en="Combining traditional agriculture with modern botanical research. We cultivate disease-resistant rooted plants and high-Brix, naturally sweet seasonal fruits through sustainable, precision farming." data-ml="നൂതന ഗവേഷണത്തിലൂടെ മികച്ചയിനം ഡ്രാഗൺ ഫ്രൂട്ട്. പ്രതിരോധശേഷിയുള്ള ചെടികളും സ്വാഭാവിക മധുരമുള്ള പഴങ്ങളും സുസ്ഥിര കൃഷിരീതിയിലൂടെ ലഭ്യമാക്കുന്നു.">Combining traditional agriculture with modern botanical research. We cultivate disease-resistant rooted plants and high-Brix, naturally sweet seasonal fruits through sustainable, precision farming.</p>
                 </div>
@@ -197,42 +197,46 @@
             </div>
         </section>
 
-        <section id="varieties" class="varieties-section relative bg-forest-dark px-6 md:px-12 lg:px-16 z-30 overflow-hidden">
-            <!-- Background Watermark -->
-            <div class="absolute top-8 md:top-16 left-0 w-full flex justify-center pointer-events-none z-0 overflow-hidden">
-                <h2 class="watermark-text font-display font-extrabold tracking-tight uppercase whitespace-nowrap text-white select-none lang-text" data-en="PREMIUM VARIETIES" data-ml="പ്രീമിയം ഇനങ്ങൾ" aria-hidden="true">PREMIUM VARIETIES</h2>
-            </div>
+        <section id="varieties" class="showcase-scroll-section" aria-labelledby="showcase-title">
+            <div class="showcase-sticky">
+                <div class="showcase-background" aria-hidden="true"></div>
+                <div class="showcase-vignette" aria-hidden="true"></div>
+                <div class="showcase-header">
+                    <span>Our collection</span>
+                    <p>Scroll to roll through</p>
+                </div>
+                <div class="showcase-copy" aria-live="polite">
+                    <span id="showcase-number" class="showcase-number">01 / 13</span>
+                    <h2 id="showcase-title">American Beauty</h2>
+                    <p id="showcase-character">Rich berry-like sweetness, vivid magenta</p>
+                    <dl class="showcase-facts">
+                        <div><dt>Flesh</dt><dd id="showcase-flesh">Vivid fuchsia-magenta</dd></div>
+                        <div><dt>Reported Brix</dt><dd id="showcase-brix">17–19°</dd></div>
+                        <div><dt>Flavour</dt><dd id="showcase-flavor">Berry-like, complex</dd></div>
+                        <div><dt>Pollination</dt><dd id="showcase-pollination">Self-fertile — reported</dd></div>
+                    </dl>
+                    <button id="showcase-details" class="showcase-details" type="button">View variety details <span aria-hidden="true">↗</span></button>
+                </div>
+                <div class="showcase-stage" id="showcase-stage" aria-label="Dragon fruit variety showcase" tabindex="0">
+                    <div class="showcase-fruit showcase-fruit--previous"><div class="showcase-shadow"></div><img alt="Previous dragon fruit variety" decoding="async"></div>
+                    <div class="showcase-fruit showcase-fruit--active"><div class="showcase-shadow"></div><img alt="Dragon fruit variety on display" decoding="async" fetchpriority="high"></div>
+                    <div class="showcase-fruit showcase-fruit--next"><div class="showcase-shadow"></div><img alt="Next dragon fruit variety" decoding="async"></div>
+                </div>
+                <div class="showcase-navigation-wrapper">
+                    <button id="showcase-prev" class="showcase-nav-arrow showcase-nav-arrow--left" type="button" aria-label="Previous variety">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
 
-            <div class="max-w-[1600px] mx-auto relative z-10">
-                
-                <!-- Section Header -->
-                <div class="carousel-section-header">
-                    <span class="font-display text-[10px] font-bold tracking-[0.3em] uppercase text-accent mb-1 block lang-text" data-en="OUR COLLECTION" data-ml="ഞങ്ങളുടെ ശേഖരം">OUR COLLECTION</span>
-                    <h2 class="font-display text-[clamp(1.75rem,2.6vw,2.75rem)] leading-none font-bold tracking-tight uppercase text-white/90 lang-text" data-en="13 Premium Varieties" data-ml="13 പ്രീമിയം ഇനങ്ങൾ">13 Premium Varieties</h2>
-                </div>
+                    <!-- Bottom Controls — centered progress dots -->
+                    <div class="showcase-controls" aria-label="Variety navigation">
+                        <div id="showcase-progress" class="showcase-progress" aria-label="Variety progress"></div>
+                    </div>
 
-                <!-- Primary Carousel Stage / Grid -->
-                <div class="carousel-content relative">
-                    <!-- Swipe Hint & Progress (Mobile Only) -->
-                    <div class="swipe-hint md:hidden flex justify-center items-center gap-2 py-3 opacity-100 transition-opacity duration-500">
-                        <span class="swipe-hint-text text-white/30 text-[10px] uppercase tracking-widest font-sans">Swipe to explore</span>
-                        <span class="swipe-hint-icon text-white/30 w-4 h-4">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </span>
-                    </div>
-                    <!-- New Grid Container -->
-                    <div id="varieties-grid" class="varieties-grid">
-                        <!-- Populated dynamically by JS -->
-                    </div>
-                    
-                    <div class="mobile-carousel-dots md:hidden" id="mobile-carousel-dots">
-                        <!-- Javascript will inject dots here -->
-                    </div>
+                    <button id="showcase-next" class="showcase-nav-arrow showcase-nav-arrow--right" type="button" aria-label="Next variety">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"></polyline></svg>
+                    </button>
                 </div>
-                
-                <div class="mt-2 text-[9px] opacity-25 text-center tracking-wider">
-                    Reported Brix ranges; actual sweetness varies with cultivar, maturity, growing conditions and harvest timing.
-                </div>
+                <small class="showcase-disclaimer">Reported Brix ranges vary with cultivar, maturity, growing conditions and harvest timing.</small>
             </div>
         </section>
 
@@ -293,7 +297,7 @@
                 </div>
                 
                 <div class="text-sm leading-[1.8] opacity-50 tracking-wider">
-                    <p>hello@homefarm.example</p>
+                    <p>hello@homefarm-production.com</p>
                     <p>HomeFarm Farm<br>Kochi, Kerala<br>India</p>
                 </div>
             </div>
@@ -307,30 +311,42 @@
         ================================================================ -->
         <div id="variety-modal" class="premium-modal hidden" aria-hidden="true" role="dialog">
             <div class="premium-modal-backdrop" id="variety-modal-close-bg"></div>
-            <div class="premium-modal-content">
+            <div class="premium-modal-container">
+                <!-- Floating Close Button -->
                 <button class="premium-modal-close" id="variety-modal-close-btn" aria-label="Close modal">✕</button>
-                <div class="premium-modal-layout">
-                    <div class="premium-modal-image-col">
-                        <img id="modal-image" src="" alt="" class="premium-modal-image">
-                    </div>
-                    <div class="premium-modal-text-col">
+                
+                <!-- Left/Top: Image Banner -->
+                <div class="premium-modal-media">
+                    <img id="modal-image" src="" alt="" class="premium-modal-img">
+                </div>
+
+                <!-- Right/Bottom: Content Area -->
+                <div class="premium-modal-content-area">
+                    <!-- Scrollable Body -->
+                    <div class="premium-modal-body">
                         <span class="premium-modal-badge" id="modal-badge"></span>
                         <h2 class="premium-modal-title" id="modal-title"></h2>
                         <p class="premium-modal-subtitle" id="modal-subtitle"></p>
                         
                         <div class="premium-modal-divider"></div>
                         
-                        <div class="premium-modal-facts" id="modal-facts">
+                        <div class="modal-bento-grid" id="modal-facts">
                             <!-- Populated by JS -->
                         </div>
                         
                         <div class="premium-modal-notes" id="modal-notes">
                             <!-- Populated by JS -->
                         </div>
-                        
-                        <div class="premium-modal-actions mt-auto pt-6">
-                            <a href="#contact" class="premium-btn premium-btn-primary w-full" id="modal-order-btn" onclick="closeVarietyModal()">ORDER NOW</a>
-                        </div>
+                    </div>
+
+                    <!-- Fixed Footer -->
+                    <div class="premium-modal-footer">
+                        <a href="https://wa.me/917012301716" target="_blank" rel="noopener" class="whatsapp-cta-btn" id="modal-order-btn" onclick="closeVarietyModal()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                            </svg>
+                            ORDER VIA WHATSAPP (7012301716)
+                        </a>
                     </div>
                 </div>
             </div>

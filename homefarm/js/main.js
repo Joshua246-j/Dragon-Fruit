@@ -105,9 +105,7 @@ class App {
 
         sections.forEach(section => observer.observe(section));
         
-        const updateHeader = () => {
-            const scrollY = window.scrollY || window.pageYOffset;
-            
+        const updateHeader = (scrollY) => {
             if (scrollY > 60) {
                 header.classList.add('header-scrolled');
             } else {
@@ -115,11 +113,14 @@ class App {
             }
         };
 
-        // Use passive scroll listener for performance
-        window.addEventListener('scroll', updateHeader, { passive: true });
+        if (this.lenis) {
+            this.lenis.on('scroll', (e) => updateHeader(e.animatedScroll || window.scrollY));
+        } else {
+            window.addEventListener('scroll', () => updateHeader(window.scrollY), { passive: true });
+        }
         
         // Initial check in case page is already scrolled
-        updateHeader();
+        updateHeader(window.scrollY);
     }
 
     initLanguageToggle() {

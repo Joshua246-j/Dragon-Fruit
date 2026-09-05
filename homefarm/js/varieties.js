@@ -15,7 +15,7 @@
 
 const WHATSAPP_NUMBER = '917012301716';
 
-const varieties = [
+const varietyRecords = [
   {
     id: 'ecuador-palora-yellow',
     number: 1,
@@ -37,6 +37,10 @@ const varieties = [
     pollination: 'Self-fertile — reported',
     pollinationML: 'സ്വയം പരാഗണം — റിപ്പോർട്ട് ചെയ്തത്',
     evidence: 'HIGH',
+    fleshCategory: 'white',
+    isSelfFertile: true,
+    minBrix: 18,
+    maxBrix: 22,
     description: 'The Ecuador Palora is renowned worldwide for its exceptional sweetness and unique thorny yellow skin.',
     descriptionML: 'അസാധാരണ മധുരത്തിനും മഞ്ഞ മുള്ളുള്ള തൊലിക്കും ലോകപ്രശസ്തമായ ഇനം.',
     plantNotes: 'Slower-growing compared to red-fleshed types. Thorny stems require careful handling.',
@@ -69,6 +73,10 @@ const varieties = [
     pollination: 'Cross-pollination recommended',
     pollinationML: 'അന്യ പരാഗണം ശുപാർശ ചെയ്യുന്നു',
     evidence: 'MEDIUM',
+    fleshCategory: 'red',
+    isSelfFertile: false,
+    minBrix: 14,
+    maxBrix: 16,
     description: 'A vigorous grower producing vibrant red flesh with a balanced, tangy-sweet flavor reminiscent of mixed berries.',
     descriptionML: 'ഉജ്ജ്വല ചുവന്ന ഉൾഭാഗവും സന്തുലിതമായ പുളിമധുരവും ഉള്ള ശക്തമായ ഒരു ഇനം.',
     plantNotes: 'Vigorous grower with strong stem production.',
@@ -101,6 +109,10 @@ const varieties = [
     pollination: 'Self-incompatible — requires cross-pollination',
     pollinationML: 'സ്വയം പരാഗണമില്ല — അന്യ പരാഗണം ആവശ്യമാണ്',
     evidence: 'MEDIUM',
+    fleshCategory: 'red',
+    isSelfFertile: false,
+    minBrix: 16,
+    maxBrix: 19,
     description: 'A visually striking variety with deep purple flesh and a complex grape-berry flavor.',
     descriptionML: 'ആഴത്തിലുള്ള പർപ്പിൾ ഉൾഭാഗവും മുന്തിരിയുടെയും ബെറിയുടെയും സങ്കീർണ്ണ രുചിയുമുള്ള ആകർഷകമായ ഇനം.',
     plantNotes: 'Good vigor. Requires companion varieties for pollination.',
@@ -133,6 +145,10 @@ const varieties = [
     pollination: 'Reports vary by clone',
     pollinationML: 'ക്ലോൺ അനുസരിച്ച് വ്യത്യാസപ്പെടും',
     evidence: 'MEDIUM',
+    fleshCategory: 'red',
+    isSelfFertile: false,
+    minBrix: 14,
+    maxBrix: 17,
     description: 'A classic red-fleshed variety known for robust growth and dependable mildly sweet fruit.',
     descriptionML: 'ശക്തമായ വളർച്ചയ്ക്കും വിശ്വസനീയമായ സൗമ്യ മധുരമുള്ള ഫലങ്ങൾക്കും പ്രശസ്തമായ ക്ലാസിക് ചുവന്ന ഇനം.',
     plantNotes: 'Robust grower. Good for beginners.',
@@ -165,6 +181,10 @@ const varieties = [
     pollination: 'Reports vary by clone',
     pollinationML: 'ക്ലോൺ അനുസരിച്ച് വ്യത്യാസപ്പെടും',
     evidence: 'MEDIUM',
+    fleshCategory: 'red',
+    isSelfFertile: false,
+    minBrix: 16,
+    maxBrix: 18,
     description: 'A vigorous red variety that performs exceptionally well in warm climates with an earthy sweetness.',
     descriptionML: 'ചൂടുള്ള കാലാവസ്ഥയിൽ നന്നായി വളരുന്ന ശക്തമായ ചുവന്ന ഇനം.',
     plantNotes: 'Vigorous. Performs well in warm Indian climates.',
@@ -197,6 +217,10 @@ const varieties = [
     pollination: 'Reports vary by clone',
     pollinationML: 'ക്ലോൺ അനുസരിച്ച് വ്യത്യാസപ്പെടും',
     evidence: 'MEDIUM',
+    fleshCategory: 'red',
+    isSelfFertile: false,
+    minBrix: 15,
+    maxBrix: 18,
     description: 'Known for its rich, deep red color and strong growth habit in tropical regions.',
     descriptionML: 'ഗാഢമായ ചുവപ്പ് നിറത്തിനും ഉഷ്ണമേഖലാ പ്രദേശങ്ങളിലെ ശക്തമായ വളർച്ചയ്ക്കും പ്രശസ്തം.',
     plantNotes: 'Strong growth habit. Suitable for tropical conditions.',
@@ -229,6 +253,10 @@ const varieties = [
     pollination: 'Self-fertile — widely reported',
     pollinationML: 'സ്വയം പരാഗണം — വ്യാപകമായി റിപ്പോർട്ട് ചെയ്തത്',
     evidence: 'HIGH',
+    fleshCategory: 'red',
+    isSelfFertile: true,
+    minBrix: 17,
+    maxBrix: 19,
     description: 'An incredibly popular commercial variety offering gorgeous fuchsia-magenta flesh and an excellent berry flavor.',
     descriptionML: 'മനോഹരമായ ഫ്യൂഷ-മജന്ത ഉൾഭാഗവും മികച്ച ബെറി രുചിയുമുള്ള ജനപ്രിയ വാണിജ്യ ഇനം.',
     plantNotes: 'Popular commercial variety. Reliable producer.',
@@ -261,6 +289,10 @@ const varieties = [
     pollination: 'Self-incompatible',
     pollinationML: 'അന്യ പരാഗണം ആവശ്യമാണ്',
     evidence: 'MEDIUM',
+    fleshCategory: 'white',
+    isSelfFertile: false,
+    minBrix: 14,
+    maxBrix: 16,
     description: 'A rare smooth-skinned yellow variety producing sweet, white flesh. Requires cross-pollination.',
     descriptionML: 'മിനുസമുള്ള മഞ്ഞ തൊലിയും മധുരമുള്ള വെള്ള ഉൾഭാഗവും ഉള്ള അപൂർവ ഇനം. ഫലം ഉണ്ടാകാൻ അന്യ പരാഗണം ആവശ്യമാണ്.',
     plantNotes: 'Requires companion varieties for pollination.',
@@ -293,6 +325,10 @@ const varieties = [
     pollination: 'Self-fertile — widely reported',
     pollinationML: 'സ്വയം പരാഗണം — വ്യാപകമായി റിപ്പോർട്ട് ചെയ്തത്',
     evidence: 'HIGH',
+    fleshCategory: 'white',
+    isSelfFertile: true,
+    minBrix: 12,
+    maxBrix: 15,
     description: 'The classic white-fleshed dragon fruit. Very reliable, fast-growing, and highly productive.',
     descriptionML: 'ക്ലാസിക് വെളുത്ത ഉൾഭാഗമുള്ള ഡ്രാഗൺ ഫ്രൂട്ട്. വിശ്വസനീയം, വേഗം വളരുന്നത്, മികച്ച വിളവ്.',
     plantNotes: 'Fast-growing. Reliable producer. Good for beginners.',
@@ -325,6 +361,10 @@ const varieties = [
     pollination: 'Cross-pollination recommended',
     pollinationML: 'അന്യ പരാഗണം ശുപാർശ ചെയ്യുന്നു',
     evidence: 'LIMITED',
+    fleshCategory: 'red',
+    isSelfFertile: false,
+    minBrix: 17,
+    maxBrix: 19,
     description: 'A premium variety celebrated for its intense sweetness and beautiful large fruit with gradient flesh.',
     descriptionML: 'തീവ്ര മധുരത്തിനും മനോഹരമായ വലിയ ഫലത്തിനും ആഘോഷിക്കപ്പെടുന്ന പ്രീമിയം ഇനം.',
     plantNotes: 'Requires companion varieties for pollination.',
@@ -357,6 +397,10 @@ const varieties = [
     pollination: 'Self-fertile — reported',
     pollinationML: 'സ്വയം പരാഗണം — റിപ്പോർട്ട് ചെയ്തത്',
     evidence: 'MEDIUM',
+    fleshCategory: 'red',
+    isSelfFertile: true,
+    minBrix: 15,
+    maxBrix: 17,
     description: 'A highly adaptable and reliable red variety producing well-rounded, sweet fruit.',
     descriptionML: 'വളരെ അനുയോജ്യവും വിശ്വസനീയവുമായ ചുവന്ന ഇനം. സന്തുലിതമായ മധുര രുചിയുള്ള നല്ല ഫലം ഉൽപ്പാദിപ്പിക്കുന്നു.',
     plantNotes: 'Highly adaptable. Suitable for various growing conditions.',
@@ -389,6 +433,10 @@ const varieties = [
     pollination: 'Self-incompatible — reported',
     pollinationML: 'അന്യ പരാഗണം ആവശ്യമാണ്',
     evidence: 'MEDIUM',
+    fleshCategory: 'red',
+    isSelfFertile: false,
+    minBrix: 16,
+    maxBrix: 18,
     description: 'A beautiful large-fruited variety with crisp, sweet flesh and strong vigor. Requires cross-pollination.',
     descriptionML: 'മൊരുമൊരുപ്പുള്ള, മധുരമുള്ള ഉൾഭാഗവും ശക്തമായ വളർച്ചയുമുള്ള വലിയ ഇനം. അന്യ പരാഗണം ആവശ്യമാണ്.',
     plantNotes: 'Strong vigor. Requires companion varieties.',
@@ -421,6 +469,10 @@ const varieties = [
     pollination: 'Self-fertile — reported',
     pollinationML: 'സ്വയം പരാഗണം — റിപ്പോർട്ട് ചെയ്തത്',
     evidence: 'MEDIUM',
+    fleshCategory: 'red',
+    isSelfFertile: true,
+    minBrix: 19,
+    maxBrix: 21,
     description: 'Produces exceptionally sweet fruits with concentrated dark red-purple flesh and raspberry-like notes.',
     descriptionML: 'അസാധാരണമായ മധുരമുള്ള, ഇരുണ്ട ചുവപ്പ്-പർപ്പിൾ ഉൾഭാഗവും റാസ്‌ബെറി രുചിയുമുള്ള ഫലങ്ങൾ.',
     plantNotes: 'Collector variety. Smaller fruit but exceptional flavor concentration.',
@@ -433,6 +485,43 @@ const varieties = [
     altText: 'Voodoo Child dragon fruit cut open showing dark red-purple flesh with black seeds'
   }
 ];
+
+// The single production manifest used by the showcase, modal and comparison.
+// Source cut images remain for editorial/detail views; heroAsset is only for the rolling stage.
+// The supplied showcase artwork is kept in Varities_Corosal (the source folder's
+// existing spelling) and is mapped explicitly so each named variety uses its
+// corresponding fruit image.
+const showcaseHeroAssets = {
+  'american-beauty': 'AMERICAN BEAUTY — HERO CUT FRUIT.png',
+  'costa-rican-white': 'COSTA RICAN WHITE — HERO CUT FRUIT.png',
+  'ecuador-palora-yellow': 'ECUADOR PALORA YELLOW — HERO CUT FRUIT.png',
+  'israel-yellow': 'ISRAEL YELLOW — HERO CUT FRUIT.png',
+  'makisupa-red': 'MAKISUPA RED — HERO CUT FRUIT.png',
+  'malaysian-red': 'MALAYSIAN RED — HERO CUT FRUIT.png',
+  'mexican-red': 'MEXICAN RED — HERO CUT FRUIT.png',
+  'moroccan-red': 'MOROCCAN RED — HERO CUT FRUIT.png',
+  'natural-mystic': 'NATURAL MYSTIC — HERO CUT FRUIT.png',
+  'purple-haze': 'PURPLE HAZE — HERO CUT FRUIT.png',
+  'super-nova': 'SUPER NOVA — HERO CUT FRUIT.png',
+  thompson: 'THOMPSON — HERO CUT FRUIT.png',
+  'voodoo-child': 'VOODOO CHILD — HERO CUT FRUIT.png'
+};
+
+const varietyOrder = [
+  'american-beauty', 'costa-rican-white', 'ecuador-palora-yellow', 'israel-yellow',
+  'makisupa-red', 'malaysian-red', 'mexican-red', 'moroccan-red', 'natural-mystic',
+  'purple-haze', 'super-nova', 'thompson', 'voodoo-child'
+];
+const varieties = varietyOrder.map((id, index) => {
+  const variety = varietyRecords.find((item) => item.id === id);
+  return {
+    ...variety,
+    number: index + 1,
+    heroAsset: `assets/images/varieties/Varities_Corosal/${showcaseHeroAssets[id]}`,
+    cutAsset: variety.image,
+    order: index + 1
+  };
+});
 
 
 /**
@@ -448,4 +537,3 @@ function getWhatsAppURL(varietyName, productType) {
   const msg = messages[productType] || messages.general;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
 }
-

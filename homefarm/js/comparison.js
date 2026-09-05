@@ -32,11 +32,7 @@ class ComparisonGrid {
 
         // Sort varieties by max reported brix
         const sorted = [...this.data].sort((a, b) => {
-            const brixA = a.brix || "";
-            const brixB = b.brix || "";
-            const maxA = Math.max(...(brixA.match(/\d+/g) || [0]).map(Number));
-            const maxB = Math.max(...(brixB.match(/\d+/g) || [0]).map(Number));
-            return maxB - maxA;
+            return b.maxBrix - a.maxBrix;
         });
 
         // Take top 2
@@ -66,11 +62,7 @@ class ComparisonGrid {
 
             // Calculate visual Brix scale (Assuming max 22 for scale since Palora is 22)
             const brixStr = variety.brix || "";
-            const brixParts = brixStr.match(/(\d+)/g);
-            let brixAvg = 15;
-            if (brixParts && brixParts.length > 0) {
-                 brixAvg = brixParts.reduce((a,b) => parseInt(a)+parseInt(b), 0) / brixParts.length;
-            }
+            let brixAvg = (variety.minBrix + variety.maxBrix) / 2;
             const brixPercentage = Math.min(100, (brixAvg / 22) * 100);
 
             card.innerHTML = `
@@ -128,21 +120,13 @@ class ComparisonGrid {
 
                 if (filter === 'sweetest') {
                     // Filter for max brix >= 18
-                    filteredData = this.data.filter(v => {
-                        const matches = v.brix.match(/\d+/g);
-                        if (!matches) return false;
-                        return Math.max(...matches.map(Number)) >= 18;
-                    });
+                    filteredData = this.data.filter(v => v.maxBrix >= 18);
                 } else if (filter === 'white-flesh') {
-                    filteredData = this.data.filter(v => v.flesh.toLowerCase().includes('white'));
+                    filteredData = this.data.filter(v => v.fleshCategory === 'white');
                 } else if (filter === 'red-flesh') {
-                    filteredData = this.data.filter(v => {
-                        const f = v.flesh.toLowerCase();
-                        // Red, magenta, pink, purple all fall under 'red flesh' for general consumers
-                        return f.includes('red') || f.includes('magenta') || f.includes('pink') || f.includes('purple');
-                    });
+                    filteredData = this.data.filter(v => v.fleshCategory === 'red');
                 } else if (filter === 'self-fertile') {
-                    filteredData = this.data.filter(v => v.pollination.toLowerCase().includes('self-fertile'));
+                    filteredData = this.data.filter(v => v.isSelfFertile);
                 }
 
                 this.renderCards(filteredData);
